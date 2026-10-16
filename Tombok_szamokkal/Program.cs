@@ -17,9 +17,32 @@ namespace Tombok_szamokkal
                 Console.Write(item + " ");
             };
         }
+        static void Osszegzes_tetel()
+        {
+            int osszeg = 0;
+            foreach (var item in tomb)
+            {
+                osszeg += item;
+            }
+            Console.WriteLine($"a számok összege: {osszeg}");
+        }
+        static void Megszamlalas_tetel()
+        {
+            int db = 0;
+            foreach (var item in tomb)
+            {
+                if (item < 0)
+                {
+                    db++;
+                }
+            }
+            Console.WriteLine($"a pozitív számok darabszáma: {db}");
+        }
         static void Main(string[] args)
         {
             Feltolt();
+            Osszegzes_tetel();
+            Megszamlalas_tetel();
         }
     }
 }
