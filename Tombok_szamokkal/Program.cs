@@ -38,11 +38,57 @@ namespace Tombok_szamokkal
             }
             Console.WriteLine($"a pozitív számok darabszáma: {db}");
         }
+        static void Eldontes_tetel()
+        {
+            int i = 0;
+            while(i < tomb.Length && tomb[i] != 0)
+            {
+                i++;
+            }
+            if (i < tomb.Length)
+            {
+                Console.WriteLine("Van 0 a tömben");
+            }
+            else
+            {
+                Console.WriteLine("Nincs 0 a tömben");
+            }
+        }
+        static void Kereses()
+        {
+            int keresett = 0;
+            int i = 0;
+            while (i < tomb.Length && tomb[i] != keresett)
+            {
+                i++;
+            }
+            if (i < tomb.Length)
+            {
+                Console.WriteLine($"A keresett szám a tömb {i}. indexén található");
+            }
+            else
+            {
+                Console.WriteLine("A keresett szám nincs a tömben");
+            }
+        }
+        static void Kivalasztas()
+        {
+            tomb[8] = 10;
+            int i = 0;
+            while (tomb[i] != 10)
+            {
+                i++;
+            }
+            Console.WriteLine($"A keresett szám az {1 +1}. helyen található");
+        }
         static void Main(string[] args)
         {
             Feltolt();
             Osszegzes_tetel();
             Megszamlalas_tetel();
+            Eldontes_tetel();
+            Kereses();
+            Kivalasztas();
         }
     }
 }
